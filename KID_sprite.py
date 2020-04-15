@@ -1,6 +1,7 @@
 import pygame
 from sprite_object import spriteObject
 
+
 class KidSprite(spriteObject):
     def __init__(self):
         super().__init__("assets/players/kid 16x16.png")

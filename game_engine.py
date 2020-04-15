@@ -7,7 +7,7 @@ class gameEngine():
     def __init__(self):
 
         pygame.init()
-        self.window = pygame.display.set_mode((800, 600))
+        self.window = pygame.display.set_mode((832, 640))
         self.clock = pygame.time.Clock()
         self.FPS = 30
 

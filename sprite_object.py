@@ -7,6 +7,7 @@
 
 import pygame
 
+
 class spritesheet(object):
     def __init__(self, filename):
         self.sheet = pygame.image.load(filename).convert()
@@ -34,6 +35,7 @@ class spritesheet(object):
         tups = [(rect[0]+rect[2]*x, rect[1], rect[2], rect[3])
                 for x in range(image_count)]
         return self.images_at(tups, colorkey)
+
 
 class spriteObject:
     def __init__(self, spritesheet_path):

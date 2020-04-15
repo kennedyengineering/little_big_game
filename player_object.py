@@ -7,15 +7,23 @@ class Player():
 
     def move_left(self):
         self.current_sprite = self.sprite.move_left()
+        rect = self.current_sprite.get_rect()
+        self.location[0] -= rect[2]
 
     def move_right(self):
         self.current_sprite = self.sprite.move_right()
+        rect = self.current_sprite.get_rect()
+        self.location[0] += rect[2]
 
     def move_up(self):
         self.current_sprite = self.sprite.move_up()
+        rect = self.current_sprite.get_rect()
+        self.location[1] -= rect[3]
 
     def move_down(self):
         self.current_sprite = self.sprite.move_down()
+        rect = self.current_sprite.get_rect()
+        self.location[1] += rect[3]
 
     def get_sprite(self):
         return self.current_sprite
