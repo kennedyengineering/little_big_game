@@ -2,14 +2,22 @@ import pygame
 from KID_sprite import KidSprite
 from player_object import Player
 
+
 class gameEngine():
     def __init__(self):
+
         pygame.init()
         self.window = pygame.display.set_mode((800, 600))
         self.clock = pygame.time.Clock()
         self.FPS = 30
 
         self.player = Player(KidSprite())
+
+    def render(self):
+
+        self.window.fill((0, 0, 0))
+        self.window.blit(self.player.get_sprite(), self.player.get_location())
+        pygame.display.flip()
 
     def update(self):
 
@@ -27,9 +35,7 @@ class gameEngine():
                 elif event.key == pygame.K_d:
                     self.player.move_right()
 
-        self.window.fill((0, 0, 0))
-        self.window.blit(self.player.get_sprite(), self.player.get_location())
-        pygame.display.flip()
+        self.render()
 
         self.clock.tick(self.FPS)
 
