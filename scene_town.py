@@ -6,12 +6,18 @@ class SceneTown(Scene):
     def __init__(self):
         super().__init__()
 
-        #block = BlockGrass()
-        #self.object_list.append(block)
-
+        # making the floor all grass
         for i in range(11):
             for ii in range(10):
-                self.object_list.append(BlockDirt(location=[i*64, ii*64], dimensions=[64, 64]))
+                self.object_list.append(BlockGrass(location=[i*64, ii*64], dimensions=[64, 64]))
 
-        construct_stone_house(self.object_list, [0, 0], [64, 64])
-        construct_stone_house(self.object_list, [6*64, 0], [64, 64])
+        # creating the stone houses
+        for i in range(5):
+            for ii in range(3):
+                self.object_list.append(BlockStone(location=[i*64, ii*64], dimensions=[64, 64]))
+        self.object_list.append(BlockDoor(location=[2*64, 2*64], dimensions=[64, 64]))
+
+        for i in range(5):
+            for ii in range(3):
+                self.object_list.append(BlockStone(location=[6*64+i*64, ii*64], dimensions=[64, 64]))
+        self.object_list.append(BlockDoor(location=[6*64+2*64, 2*64], dimensions=[64, 64]))

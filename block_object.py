@@ -5,7 +5,6 @@ class Block:
     def __init__(self, location=[0,0], dimensions=[16,16], surface=None):
         self.location = location
         self.dimensions = dimensions
-        self.rect = pygame.Rect(location[0], location[1], self.dimensions[0], self.dimensions[1])
         if surface is None:
             self.surface = pygame.Surface(self.dimensions)
         else:
@@ -17,6 +16,9 @@ class Block:
 
     def get_surface(self):
         return self.surface
+
+    def get_rect(self):
+        return pygame.Rect(self.location[0], self.location[1], self.dimensions[0], self.dimensions[1])
 
     def get_location(self):
         return self.location

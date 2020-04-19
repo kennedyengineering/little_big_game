@@ -1,7 +1,8 @@
 # human controlled player
+import pygame
 
 
-class Player():
+class Player:
     def __init__(self, sprite):
         self.sprite = sprite
         self.current_sprite = sprite.down_sprites[0] ###!!!###
@@ -30,6 +31,10 @@ class Player():
         rect = self.current_sprite.get_rect()
         #self.location[1] += rect[3]
         scene.shift_scene([0, rect[3]])
+
+    def get_rect(self):
+        return pygame.Rect(self.location[0], self.location[1],
+                           self.current_sprite.get_rect()[2], self.current_sprite.get_rect()[3])
 
     def get_sprite(self):
         return self.current_sprite

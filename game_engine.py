@@ -45,7 +45,7 @@ class gameEngine():
                     self.player.move_right(self.current_scene)
 
         if self.current_scene is not None:
-            self.current_scene.update()
+            self.current_scene.update(self.player)
 
         self.render()
 
