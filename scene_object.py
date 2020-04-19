@@ -3,7 +3,6 @@ import pygame
 
 class Scene:
     def __init__(self):
-        self.location = [0, 0]
         self.object_list = []
 
     def shift_scene(self, distance_vector):

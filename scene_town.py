@@ -1,5 +1,5 @@
 from scene_object import Scene
-from block_definitions import BlockGrass
+from block_definitions import *
 
 
 class SceneTown(Scene):

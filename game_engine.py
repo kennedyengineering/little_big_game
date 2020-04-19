@@ -13,7 +13,7 @@ class gameEngine():
         self.FPS = 30
 
         self.player = Player(KidSprite())
-        self.player.location = [6*64, 6*64]
+        self.player.location = [6*64, 5*64]
 
         self.current_scene = SceneTown()
 
