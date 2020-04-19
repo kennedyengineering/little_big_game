@@ -3,6 +3,7 @@ from KID_sprite import KidSprite
 from player_object import Player
 from scene_town import SceneTown
 
+
 class gameEngine():
     def __init__(self):
 
@@ -12,6 +13,8 @@ class gameEngine():
         self.FPS = 30
 
         self.player = Player(KidSprite())
+        self.player.location = [6*64, 6*64]
+
         self.current_scene = SceneTown()
 
     def render(self):

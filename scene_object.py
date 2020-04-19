@@ -4,12 +4,12 @@ import pygame
 class Scene:
     def __init__(self):
         self.location = [0, 0]
-        self.object_list = []  # pass player as an object?
+        self.object_list = []
 
     def shift_scene(self, distance_vector):
         for object1 in self.object_list:
-            object1.location[0] += distance_vector[0]
-            object1.location[1] += distance_vector[1]
+            object1.location[0] -= distance_vector[0]
+            object1.location[1] -= distance_vector[1]
 
     def render(self, surface):
         for object1 in self.object_list:

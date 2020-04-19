@@ -1,3 +1,5 @@
+# human controlled player
+
 
 class Player():
     def __init__(self, sprite):
