@@ -34,4 +34,4 @@ class BlockDoor(Block):
         super().__init__(location, dimensions, surface=block_spritesheet.image_at([2*16, 6*16, 16, 16]))
 
     def action(self, block):
-        print("door activated")
+        print("door activated", self)
