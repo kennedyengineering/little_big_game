@@ -11,4 +11,4 @@ class SceneTown(Scene):
 
         for i in range(10):
             for ii in range(10):
-                self.object_list.append(BlockGrass(location=[i*64, ii*64], dimensions=[64, 64]))
+                self.object_list.append(BlockDoor(location=[i*64, ii*64], dimensions=[64, 64]))

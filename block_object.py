@@ -6,8 +6,11 @@ class Block:
         self.location = location
         self.dimensions = dimensions
         self.rect = pygame.Rect(location[0], location[1], self.dimensions[0], self.dimensions[1])
-        if surface is None: self.surface = pygame.Surface(self.dimensions)
-        else: self.surface = surface
+        if surface is None:
+            self.surface = pygame.Surface(self.dimensions)
+        else:
+            self.surface = surface
+            self.surface = pygame.transform.scale(self.surface, dimensions)
 
     def action(self, block):
         pass
