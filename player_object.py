@@ -18,7 +18,6 @@ class Player:
         scene.update(self)
         if False in self.is_on_block or (len(self.is_on_block) == 0):
             scene.shift_scene([rect[2], 0])
-        print(self.is_on_block)
         self.is_on_block = []
 
     def move_right(self, scene):
