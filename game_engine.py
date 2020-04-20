@@ -1,5 +1,6 @@
 import pygame
 from KID_sprite import KidSprite
+from BK_sprite import BKSprite
 from player_object import Player
 from scene_town import SceneTown
 from scene_room import SceneRoom
@@ -14,6 +15,7 @@ class gameEngine():
         self.FPS = 30
 
         self.player = Player(KidSprite())
+        #self.player = Player(BKSprite())
         self.player.location = [6*64, 5*64]
 
         self.scene_dict = {"town": SceneTown(self), "room": SceneRoom(self)}
