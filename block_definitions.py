@@ -26,8 +26,18 @@ class BlockStone(Block):
         super().__init__(location, dimensions, surface=block_spritesheet.image_at([6*16, 1*16, 16, 16]), is_obstacle=is_obstacle)
 
 
-class BlockDoor(Block):
+class BlockWood(Block):
     def __init__(self, location=[0,0], dimensions=[16,16], is_obstacle=False):
+
+        block_spritesheet = spritesheet("assets/tiles/basic_tiles.png")
+
+        super().__init__(location, dimensions, surface=block_spritesheet.image_at([0*16, 2*16, 16, 16]), is_obstacle=is_obstacle)
+
+
+class BlockDoor(Block):
+    def __init__(self, engine, scene_key, location=[0,0], dimensions=[16,16], is_obstacle=False):
+        self.engine = engine
+        self.scene_key = scene_key
 
         block_spritesheet = spritesheet("assets/tiles/basic_tiles.png")
 
@@ -37,3 +47,5 @@ class BlockDoor(Block):
         super().action(player)
 
         print("door activated", self)
+
+        self.engine.switch_scene(self.scene_key)
