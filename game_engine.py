@@ -4,6 +4,7 @@ from player_object import Player
 from scene_town import SceneTown
 from scene_room import SceneRoom
 
+
 class gameEngine():
     def __init__(self):
 
@@ -15,7 +16,7 @@ class gameEngine():
         self.player = Player(KidSprite())
         self.player.location = [6*64, 5*64]
 
-        self.scene_dict = {"town" : SceneTown(self), "room" : SceneRoom(self)}
+        self.scene_dict = {"town": SceneTown(self), "room": SceneRoom(self)}
         self.current_scene = self.scene_dict["town"]
 
     def switch_scene(self, key):

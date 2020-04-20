@@ -46,6 +46,4 @@ class BlockDoor(Block):
     def action(self, player):
         super().action(player)
 
-        print("door activated", self)
-
         self.engine.switch_scene(self.scene_key)
