@@ -2,7 +2,7 @@ import pygame
 
 
 class Block:
-    def __init__(self, location=[0,0], dimensions=[16,16], surface=None):
+    def __init__(self, location=[0,0], dimensions=[16,16], surface=None, is_obstacle=False):
         self.location = location
         self.dimensions = dimensions
         if surface is None:
@@ -11,8 +11,10 @@ class Block:
             self.surface = surface
             self.surface = pygame.transform.scale(self.surface, dimensions)
 
-    def action(self, block):
-        pass
+        self.is_obstacle = is_obstacle
+
+    def action(self, player):
+        player.is_on_block.append(not self.is_obstacle)
 
     def get_surface(self):
         return self.surface

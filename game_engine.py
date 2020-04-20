@@ -44,8 +44,8 @@ class gameEngine():
                 elif event.key == pygame.K_d:
                     self.player.move_right(self.current_scene)
 
-        if self.current_scene is not None:
-            self.current_scene.update(self.player)
+        #if self.current_scene is not None:
+        #    self.current_scene.update(self.player)
 
         self.render()
 

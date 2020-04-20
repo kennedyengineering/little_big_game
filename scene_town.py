@@ -14,10 +14,10 @@ class SceneTown(Scene):
         # creating the stone houses
         for i in range(5):
             for ii in range(3):
-                self.object_list.append(BlockStone(location=[i*64, ii*64], dimensions=[64, 64]))
+                self.object_list.append(BlockStone(location=[i*64, ii*64], dimensions=[64, 64], is_obstacle=True))
         self.object_list.append(BlockDoor(location=[2*64, 2*64], dimensions=[64, 64]))
 
         for i in range(5):
             for ii in range(3):
-                self.object_list.append(BlockStone(location=[6*64+i*64, ii*64], dimensions=[64, 64]))
+                self.object_list.append(BlockStone(location=[6*64+i*64, ii*64], dimensions=[64, 64], is_obstacle=True))
         self.object_list.append(BlockDoor(location=[6*64+2*64, 2*64], dimensions=[64, 64]))

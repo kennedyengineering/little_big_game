@@ -3,35 +3,37 @@ from sprite_object import spritesheet
 
 
 class BlockGrass(Block):
-    def __init__(self, location=[0,0], dimensions=[16,16]):
+    def __init__(self, location=[0,0], dimensions=[16,16], is_obstacle=False):
 
         block_spritesheet = spritesheet("assets/tiles/basic_tiles.png")
 
-        super().__init__(location, dimensions, surface=block_spritesheet.image_at([0*16, 8*16, 16, 16]))
+        super().__init__(location, dimensions, surface=block_spritesheet.image_at([0*16, 8*16, 16, 16]), is_obstacle=is_obstacle)
 
 
 class BlockDirt(Block):
-    def __init__(self, location=[0,0], dimensions=[16,16]):
+    def __init__(self, location=[0,0], dimensions=[16,16], is_obstacle=False):
 
         block_spritesheet = spritesheet("assets/tiles/basic_tiles.png")
 
-        super().__init__(location, dimensions, surface=block_spritesheet.image_at([2*16, 1*16, 16, 16]))
+        super().__init__(location, dimensions, surface=block_spritesheet.image_at([2*16, 1*16, 16, 16]), is_obstacle=is_obstacle)
 
 
 class BlockStone(Block):
-    def __init__(self, location=[0,0], dimensions=[16,16]):
+    def __init__(self, location=[0,0], dimensions=[16,16], is_obstacle=False):
 
         block_spritesheet = spritesheet("assets/tiles/basic_tiles.png")
 
-        super().__init__(location, dimensions, surface=block_spritesheet.image_at([6*16, 1*16, 16, 16]))
+        super().__init__(location, dimensions, surface=block_spritesheet.image_at([6*16, 1*16, 16, 16]), is_obstacle=is_obstacle)
 
 
 class BlockDoor(Block):
-    def __init__(self, location=[0,0], dimensions=[16,16]):
+    def __init__(self, location=[0,0], dimensions=[16,16], is_obstacle=False):
 
         block_spritesheet = spritesheet("assets/tiles/basic_tiles.png")
 
-        super().__init__(location, dimensions, surface=block_spritesheet.image_at([2*16, 6*16, 16, 16]))
+        super().__init__(location, dimensions, surface=block_spritesheet.image_at([2*16, 6*16, 16, 16]), is_obstacle=is_obstacle)
 
-    def action(self, block):
+    def action(self, player):
+        super().action(player)
+
         print("door activated", self)
